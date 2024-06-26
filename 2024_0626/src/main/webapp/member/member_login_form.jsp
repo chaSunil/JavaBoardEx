@@ -10,15 +10,74 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- 제이쿼리 로드 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- youtube-background 라이브러리 로드 -->
+<script src="https://unpkg.com/youtube-background@1.0.14/jquery.youtube-background.min.js"></script>
 <style type="text/css">
+
+@font-face {
+    font-family: 'PyeongChangPeace-Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+#title {
+	font-family: 'PyeongChangPeace-Bold';
+	text-align: : center;
+	z-index: 10;
+	left: 50%;
+    transform: translate(-50%, 0);
+	top: 0;
+	position: fixed;
+	margin-top: 150px;
+	font-size: 80px;
+	color: skyblue;
+	text-shadow: -2px 0px white, 0px 2px white, 2px 0px white, 0px -2px white;
+}
+
 #box {
 	width: 400px;
 	margin: auto;
-	margin-top: 200px;
+	top: 0;
+	left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 300px;
+    
+	z-index: 5;
+	position: fixed;
 }
 
 input[type="button"] {
 	width: 100px;
+}
+
+.video_bg {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    
+}
+.video_bg iframe {
+    position: absolute;
+    top: -60px;
+    bottom: -60px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 120px);
+    border: none;
+    z-index: 3;
+}
+.video_bg::after {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
 }
 </style>
 <script type="text/javascript">
@@ -50,6 +109,7 @@ input[type="button"] {
 
 <script type="text/javascript">
 	$(document).ready(function(){
+		
 		setTimeout(showMessage, 100);
 	});
 	
@@ -66,16 +126,13 @@ input[type="button"] {
 
 </head>
 <body>
-   	<!-- <div id="title"><h4>보드게임 정보 모두 여기에!!</h4></div> -->
 <form>
-<div class="background_video">
-	<video class="background_video_content" autoplay muted loop>
-	
-	</video>
+<div class="video_bg">
+    <iframe src="https://www.youtube.com/embed/f851NllfHMU?autoplay=1&mute=1&loop=1&playlist=f851NllfHMU"></iframe>
 </div>
-
-	<div id="box">
-	<div class="panel panel-primary">
+<div id="title">보드밍 회원가입</div>
+<div id="box">
+	<div class="panel panel-primary good">
    		<div class="panel-heading"><h4>로그인</h4></div>
    		<div class="panel-body">
    			<table class="table">
@@ -101,6 +158,8 @@ input[type="button"] {
    		</div>
    	</div>
 </div>
+	
+
 </form>
 </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 제이쿼리 로드 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- youtube-background 라이브러리 로드 -->
+<script src="https://unpkg.com/youtube-background@1.0.14/jquery.youtube-background.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('[data-vbg]').youtube_background(); // 실행
+  });
+</script>
+</head>
+<body>
+
+
+<div style="position: relative !important; width: 100vw; height: 100%; left: 0; bottom: 0;">
+	<div data-vbg-autoplay="true" data-vbg="https://www.youtube.com/watch?v=f851NllfHMU"></div>
+</div>
+</body>
+</html>
