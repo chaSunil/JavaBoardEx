@@ -23,6 +23,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'MabinogiClassicR';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/MabinogiClassicR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+	font-family: 'MabinogiClassicR';
+}
+
 #title {
 	font-family: 'PyeongChangPeace-Bold';
 	text-align: : center;
@@ -128,7 +139,7 @@ input[type="button"] {
 <body>
 <form>
 <div class="video_bg">
-    <iframe src="https://www.youtube.com/embed/f851NllfHMU?autoplay=1&mute=1&loop=1&playlist=f851NllfHMU"></iframe>
+    <iframe src="https://www.youtube.com/embed/ZCFNtcwhe9w?autoplay=1&mute=1&loop=1&playlist=ZCFNtcwhe9w"></iframe>
 </div>
 <div id="title">보드밍 회원가입</div>
 <div id="box">
