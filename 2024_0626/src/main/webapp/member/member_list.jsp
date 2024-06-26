@@ -125,7 +125,7 @@ td {
 						<td>
 							<!-- 관리자 or 해당 idx의 id 계정 소유주만 수정 삭제 할 수 있다. -->
 							<c:if test="${ (user.mem_grade eq '관리자') or (user.mem_idx eq vo.mem_idx) }">
-								<input class="btn btn-primary" type="button" value="수정" onclick="location.href='modify_form.do'">
+								<input class="btn btn-primary" type="button" value="수정" onclick="location.href='modify_form.do?mem_idx=${vo.mem_idx}'">
 								<input class="btn btn-danger" type="button" value="삭제" onclick="del('${vo.mem_idx}');">
 							</c:if>
 						</td>
