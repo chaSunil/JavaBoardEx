@@ -1,0 +1,74 @@
+@charset "UTF-8";
+    .box {
+        width: 1230px;
+        height: 600px;
+        margin: auto;
+    }
+    
+    .header {
+        margin-bottom: 50px;
+    }
+    
+    .image-box {
+        box-sizing: border-box;
+        width: 500px;
+        height: 500px;
+        float: left;
+        border: 0.5px solid #e2e2e2;
+        display: flex;
+        justify-content: center; /* 자식 요소를 가로(수평) 기준으로 가운데 정렬시킴 */
+        align-items: center; /* 자식 요소를 세로(수직) 기준으로 가운데 정렬시킴 */
+    }
+    
+    
+    .image img {
+        width: 100%;
+        object-fit: cover;
+        align-items: center;
+    }
+    
+    
+    .write-box {
+        box-sizing: border-box;
+        width: 700px;
+        background: black;
+        height: 500px;
+        float: right;
+    }
+    
+    .small-image-box {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 3fr;
+        width: 500px;
+        margin-top: 20px;
+        float: left;
+    }
+    
+    .small-image img {
+        width: 50px;
+        padding: 5px;
+    }
+    
+    #game1, #game2, #game3, #game4, #game5 {
+        opacity: 0.5;
+    }
+    
+    #game1:hover, #game2:hover, #game3:hover, #game4:hover, #game5:hover {
+        opacity: 1;
+    }
+    
+    .tap {
+        margin-top: 100px;
+        text-align: center;
+    }
+    
+    .video {
+        margin-top: 300px;
+        text-align: center;
+    }
+    
+    .sangse {
+        margin-top: 50px;
+        text-align: center;
+    }
