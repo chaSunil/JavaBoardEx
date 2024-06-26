@@ -24,6 +24,7 @@ public class MemberModifyFormAction extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		// /member/modify_form?mem_idx=10
 		int mem_idx = Integer.parseInt(request.getParameter("mem_idx"));
 		MemberVo vo = MemberDao.getInstance().selectOne(mem_idx);
 		request.setAttribute("vo", vo);
