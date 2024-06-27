@@ -155,4 +155,54 @@ public class PhotoDao {
 		return vo;
 	}
 	
+	public int insert(PhotoVo vo) {
+		// TODO Auto-generated method stub
+
+		int res = 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+
+		String sql = "insert into photo values(seq_photo_idx.nextVal,?,?,?,?,sysdate,?,?)";
+
+		try {
+			// 1. Connection 얻어오기
+			conn = DBService.getInstance().getConnection();
+
+			// 2. PreparedStatement
+			pstmt = conn.prepareStatement(sql);
+
+			// 3. pstmt parameter index 채우기
+			pstmt.setString(1, vo.getP_title());
+			pstmt.setString(2, vo.getP_content());
+			pstmt.setString(3, vo.getP_filename());
+			pstmt.setString(4, vo.getP_ip()) ;
+			pstmt.setString(5, vo.getP_regdate());
+			pstmt.setInt(5, vo.getMem_idx()) ;
+			pstmt.setString(6, vo.getMem_name());
+
+			// 4. DB insert
+			res = pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			// 예외 처리에서 무조건 실행되는 부분
+			// 마무리 작업(열린역순으로 닫기)
+			// 한 번에 잡아서 try catch 하기 : alt + shift + s
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return res;
+
+	}// end:insert()
+	
 }

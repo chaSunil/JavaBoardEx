@@ -11,6 +11,16 @@ public class PhotoVo {
 	int mem_idx;
 	String mem_name;
 	
+	public PhotoVo(String p_title, String p_content, String p_filename, String p_ip, int mem_idx, String mem_name) {
+		super();
+		this.p_title = p_title;
+		this.p_content = p_content;
+		this.p_filename = p_filename;
+		this.p_ip = p_ip;
+		this.mem_idx = mem_idx;
+		this.mem_name = mem_name;
+	}
+
 	public PhotoVo() {
 		// TODO Auto-generated constructor stub
 	}

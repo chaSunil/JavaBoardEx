@@ -124,10 +124,10 @@
 	
 	<div id="photo-box">
 	
-	<c:forEach begin="1" end="30">
+	<c:forEach var="vo" items="${list}">
 		<div class="photo">
-			<img src="../images/3F.png">
-			<div class="title">몬스터명</div>
+			<img src="../images/${vo.p_filename}">
+			<div class="title">${vo.p_title}</div>
 		</div>
 	</c:forEach>
 	</div>
