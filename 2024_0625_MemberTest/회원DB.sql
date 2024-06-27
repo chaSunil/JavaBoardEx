@@ -40,6 +40,9 @@ insert into member values(seq_member_idx.nextVal,'일길동','one','1234','00000
 
 select * from member
 
+-- 말왕 삭제 전용
+
+delete from member where mem_idx=15
 
 
 commit
