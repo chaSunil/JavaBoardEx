@@ -6,6 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 
 import dao.MemberDao;
@@ -40,6 +42,21 @@ public class MemberModifyAction extends HttpServlet {
 		MemberVo vo = new MemberVo(mem_name, mem_id, mem_pwd, mem_zipcode, mem_addr, mem_grade, mem_idx);
 		
 		int res = MemberDao.getInstance().update(vo);
+		
+		HttpSession session = request.getSession();
+		MemberVo loginUser = (MemberVo) session.getAttribute("user");
+		
+		//현재수정정보가 로그인한 본인 유저인경우
+		if(loginUser.getMem_idx()==mem_idx) {
+			// 로그인 상태정보
+			MemberVo user = MemberDao.getInstance().selectOne(mem_idx);
+			
+			
+			// session.removeAttribute("user"); 이렇게 삭제할 필요가 없다. 그것은 Map구조를 이해하면 된다.
+			// key, value 형태의 Map구조로 저장이 되는데, 똑같은 결과를 넣으면, 최신정보로 수정이 되어버린다.
+			session.setAttribute("user", user);
+		}
+		
 		
 		// Redirect 형식으로 추출
 		response.sendRedirect("list.do");

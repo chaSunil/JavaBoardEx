@@ -22,7 +22,7 @@
 		font-family: "MabinogiClassicR";
 	}
 	#box {
-		width: 1000px;
+		width: 1500px;
 		margin: auto;
 		margin-top: 50px;
 	}
