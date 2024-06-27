@@ -80,6 +80,7 @@ input[type="button"] {
     height: calc(100% + 120px);
     border: none;
     z-index: 3;
+    opacity: 0.95;
 }
 .video_bg::after {
     content:'';
@@ -141,7 +142,7 @@ input[type="button"] {
 <div class="video_bg">
     <iframe src="https://www.youtube.com/embed/ZCFNtcwhe9w?autoplay=1&mute=1&loop=1&playlist=ZCFNtcwhe9w"></iframe>
 </div>
-<div id="title">보드밍 회원가입</div>
+<div id="title">보드밍 로그인</div>
 <div id="box">
 	<div class="panel panel-primary good">
    		<div class="panel-heading"><h4>로그인</h4></div>

@@ -2,43 +2,98 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head >
+<head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<!-- 주소검색 API -->
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>회원가입</title>
 <style type="text/css">
-#title {
-	text-align: center;
-	margin: 50px;
-}
-#box {
-	width: 60vw;
-	margin: auto;
-	margin-top: 50px;
-	margin-bottom: 200px;
-}
-th {
-	vertical-align: middle !important;
-	text-align: right;
-	font-size: 14px;
-}
-#id_msg {
-	display: inline-block;
-	width: 300px;
-	height: 20px;
-	margin-left: 10px;
+
+<style type="text/css">
+
+/* #background {
+
+	background-image : url('../image/background_image.jpg');
+	width: 90%;
+	margin-left: 400px;
+
+} */
+
+.box {
+
+    /* 바로 상위 태그인 body를 기준으로 맞춰주게끔 */
+    /* position의 absolute라는것이, 설정하게 되면
+    바로 직계부모 태그의 영향아래 놓이게 된다는 말이다.
+    더불어서 네모를 영역으로 봤을때 왼쪽 상단 꼭지점을
+    기준으로 움직이게 된다. */
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 670px;
+    height: 960px;
+    background: #FFFFFF;
+    border: 1px solid #AACDFF;
+    box-shadow: 7px 7px 39px rgba(0, 104, 255, 0.25);
+    border-radius: 20px;
+
+    /* 이것의 의미는 타겟팅된 영역에 대해 
+    지정된 만큼 움직여주는 거라고 한다. */
+    /* justify-content: space-evenly;
+    align-content: column; */
+
+    margin: 0px;
+    padding: 100px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    
+    z-index: 1
 }
 
-#footer {
-	width: 100%;
-	text-align: center;
+#title {
+    width: 466px;
+    height: 94px;
+    left: 725px;
+    top: 132px;
+
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 47px;
+
+    color: #0068FF;
+    justify-content: space-evenly;
+}
+
+.btn {
+    width: 200px;
+    height: 50px;
+    left: 725px;
+    top: 875px;
+    background-color: #FFFFFF;
+    color: royalblue;
+    border-radius: 8px;
+    border: #0068FF solid 1px;
+}
+
+input {
+    padding: 0px;
+    border: none;
+    border-bottom: 1px solid #CFCFCF;
+    width: 466px;
+    height: 30px;
+    
+    color: #0068FF;
+}
+
+label {
+    color: lightgrey;
 }
 </style>
-<script type="text/javascript">
+
+<!-- <script type="text/javascript">
 
 	function check_id(){
 		
@@ -161,66 +216,36 @@ th {
 		f.submit();
 	}
 
-</script>
+</script> -->
 </head>
 <body>
-   	<!-- <div id="title"><h4>보드게임 정보 모두 여기에!!</h4></div> -->
-<form class="form-inline">
-	<div id="box">
-	<div class="panel panel-primary">
-   		<div class="panel-heading"><h4>회원가입</h4></div>
-   		<div class="panel-body">
-   			<table class="table">
-   				<tr>
-   					<th>이름</th>
-   					<td>
-   						<input style="width:50%" class="form-control" name="mem_name">
-   					</td>
-   				</tr>
-   				<tr>
-   					<th>아이디</th>
-   					<td>
-   						<input style="width:50%" class="form-control" name="mem_id" id="mem_id" onkeyup="check_id();">
-   						<span id="id_msg"></span>
-   					</td>
-   				</tr>
-   				<tr>
-   					<th>비밀번호</th>
-   					<td>
-   						<input style="width:50%" class="form-control" type="password" name="mem_pwd">
-   					</td>
-   				</tr>
-   				<tr>
-   					<th>닉네임</th>
-   					<td>
-   						<input style="width:50%" class="form-control" name="mem_nickname" id="mem_nickname" onkeyup="check_nickname();">
-   						<span id="nickname_msg"></span>
-   					</td>
-   				</tr>
-   				<tr>
-   					<th>우편번호</th>
-   					<td>
-   					<!-- 한 줄에 표시해주기 위해서 form-inline으로 잡아준다. -->
-   						<input style="width:50%" class="form-control" name="mem_zipcode" id="mem_zipcode">
-   						<input class="btn btn-info" type="button" value="주소검색" onclick="find_addr();">
-   					</td>
-   				</tr>
-   					<th>주소</th>
-   					<td>
-   					<!-- 한 줄에 표시해주기 위해서 form-inline으로 잡아준다. -->
-   						<input style="width:100%" class="form-control" name="mem_addr" id="mem_addr">
-   					</td>
-   				</tr>
-   				<tr>
-   					<td colspan="2" align="center">	
-   						<input class="btn btn-success" type="button" value="목록보기" onclick="location.href='list.do'"><br>
-   						<input id="btn_register" src="../image/icon.png" class="btn btn-primary" type="button" value="가입하기" disabled="disabled" onclick="send(this.form);">
-   					</td>
-   				</tr>
-   			</table>
-   		</div>
-   	</div>
-</div>
+<form>
+	<!-- <img alt="" src="../image/background_image.jpg" id="background"> -->
+		<div class="box">
+				<h2 id="title">회원가입을 위해<br>정보를 입력해주세요.</h2>
+				<label for="mem_name">*이름<br>
+					<input name="mem_name"><br><br>
+				</label>
+				<label for="mem_id">*아이디<br>
+					<input name="mem_id" id="mem_id" onkeyup="check_id();"><br><br>
+				</label>
+				<label for="mem_pwd">*비밀번호<br>
+					<input name="mem_pwd" id="mem_pwd" type="password"><br><br>
+				</label>
+				<label for="mem_nickname">*닉네임<br>
+					<input name="mem_nickname" id="mem_nickname" onkeyup="check_nickname();"><br><br>
+				</label>
+				<label for="mem_zipcode">*우편번호<br>
+					<input name="mem_zipcode" id="mem_zipcode"><br><br>
+					<input class="btn" type="button" value="주소검색" onclick="find_addr();"><br><br>
+				</label>
+				<label for="mem_addr">*주소<br>
+					<input name="mem_addr" id="mem_addr"><br><br>
+				</label>
+		
+			<input class="btn" type="button" value="목록보기" onclick="location.href='list.do'">
+	   		<input id="btn_register" class="btn" type="button" value="가입하기" disabled="disabled" onclick="send(this.form);">
+		</div>
 </form>
 </body>
 </html>
