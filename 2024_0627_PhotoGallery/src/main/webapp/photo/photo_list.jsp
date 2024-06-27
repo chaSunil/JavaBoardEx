@@ -50,11 +50,11 @@
 }
 
 .photo {
-	width: 120px;
+	width: 140px;
 	height: 160px;
 	border: 1px solid gray;
 	overflow: hidden;
-	margin-left: 60px;
+	margin-left: 45px;
 	margin-top: 50px;
 	padding: 10px;
 	
@@ -66,8 +66,10 @@
 }
 
 .photo > img {
-	width: 100px;
+	height: 110px;
+	width: 120px;
 	object-fit : cover;
+	border: 1px solid black;
 }
 
 .title {
