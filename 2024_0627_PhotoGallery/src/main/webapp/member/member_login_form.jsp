@@ -67,6 +67,10 @@
 		if("${ param.reason == 'fail_pwd' }" == "true"){
 			alert("비밀번호가 틀립니다.");
 		}
+		
+		if("${ param.reason == 'session_timeout'}" == "true") {
+			alert("시간이 경과되어, 로그아웃 되었습니다.\n로그인 후 다시 등록하세요.");
+		}
 	}
 
 </script>

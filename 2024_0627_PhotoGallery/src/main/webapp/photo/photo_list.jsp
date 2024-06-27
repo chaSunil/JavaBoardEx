@@ -54,7 +54,8 @@
 	height: 160px;
 	border: 1px solid gray;
 	overflow: hidden;
-	margin: 30px;
+	margin-left: 60px;
+	margin-top: 50px;
 	padding: 10px;
 	
 	float: left;
@@ -90,11 +91,9 @@
 				return;
 			}
 			
-			// 로그인이 된 경우 => 사진등록폼으로 이동
-			location.href="insert_form.do"; // PhotoInsertFromAction
-			
 		}
-		
+		// 로그인이 된 경우 => 사진등록폼으로 이동
+		location.href="insert_form.do"; // PhotoInsertFromAction
 	}
 
 </script>
