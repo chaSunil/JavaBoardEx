@@ -214,7 +214,7 @@ th {
    				<tr>
    					<td colspan="2" align="center">	
    						<input class="btn btn-success" type="button" value="목록보기" onclick="location.href='list.do'"><br>
-   						<input id="btn_register" src="../image/icon.png" class="btn btn-primary" type="button" value="가입하기" disabled="disabled" onclick="send(this.form);">
+   						<input id="btn_register" class="btn btn-primary" type="button" value="가입하기" disabled="disabled" onclick="send(this.form);">
    					</td>
    				</tr>
    			</table>

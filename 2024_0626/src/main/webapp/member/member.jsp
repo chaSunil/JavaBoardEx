@@ -85,7 +85,7 @@ h2 {
     text-align: center;
 }
 
-input {
+label input {
     padding: 0px;
     border: none;
     border-bottom: 1px solid #CFCFCF;
@@ -268,7 +268,7 @@ label {
 			<span id="id_msg"></span>
 			<span id="nickname_msg"></span>
 			<input class="btn btn3" type="button" value="목록보기" onclick="location.href='list.do'">
-	   		<input id="btn_register" class="btn btn3" type="button" value="가입하기" disabled="disabled" onclick="send(this.form);">
+	   		<input id="btn_register"src="../image/icon.png" class="img-button" type="button" value="가입하기" disabled="disabled" onclick="send(this.form);">
 		</div>
 </form>
 </body>
